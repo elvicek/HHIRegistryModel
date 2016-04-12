@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 6, 2011 3:49:26 AM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.hhiregistry.model.MemberGroups" table="member_groups" catalog="registry">
+        
+        <id name="membergroupsId" type="java.lang.Integer">
+            <column name="MEMBERGROUPS_ID"/>
+            <generator class="increment" />
+        </id>
+           <many-to-one name="member" class="com.hhiregistry.model.Member" fetch="select" lazy="false" column="MEMBER_ID"/>
+           <many-to-one name="group" class="com.hhiregistry.model.Groups" fetch="select" lazy="false" column="GROUP_ID"/>
+            
+        
+    </class>
+</hibernate-mapping>

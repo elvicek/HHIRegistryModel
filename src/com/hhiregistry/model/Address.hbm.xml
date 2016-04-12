@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-Dec-2010 12:03:20 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.hhiregistry.model.Address" table="address" catalog="registry">
+        <id name="addressId" type="integer">
+            <column name="ADDRESS_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="addressline1" type="string">
+            <column name="ADDRESSLINE1" length="30" />
+        </property>
+        <property name="addressline2" type="string">
+            <column name="ADDRESSLINE2" length="30" />
+        </property>
+        <property name="addressline3" type="string">
+            <column name="ADDRESSLINE3" length="30" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CREATED_BY" length="30" />
+        </property>
+        <property name="createdDate" type="date">
+            <column name="CREATED_DATE" length="10" />
+        </property>
+        <set name="members" inverse="true" lazy="false" table="member" fetch="select">
+            <key>
+                <column name="ADDRESS_ID" />
+            </key>
+            <one-to-many class="com.hhiregistry.model.Member" />
+        </set>
+        <set name="members_1" inverse="true" lazy="false" table="member" fetch="select">
+            <key>
+                <column name="ADDRESS_ID" />
+            </key>
+            <one-to-many class="com.hhiregistry.model.Member" />
+        </set>
+    </class>
+</hibernate-mapping>

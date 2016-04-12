@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-Dec-2010 12:03:20 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.hhiregistry.model.Groups" table="groups" catalog="registry">
+        <id name="groupId" type="integer">
+            <column name="GROUP_ID"/>
+            <generator class="identity" />
+        </id>
+        <property name="groupName" type="string">
+            <column name="GROUP_NAME" length="30" />
+        </property>
+        <property name="groupDescription" type="string">
+            <column name="GROUP_DESCRIPTION" length="40" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CREATED_BY" length="30" />
+        </property>
+        <property name="createdDate" type="date">
+            <column name="CREATED_DATE" length="10" />
+        </property>
+        
+   <set name="members" inverse="false" lazy="false" table="MEMBER_GROUPS" cascade="all">
+	        <key column="GROUP_ID"/>
+	        <many-to-many column="MEMBER_ID"
+	           class="com.hhiregistry.model.Member"/>
+	</set>
+        
+    </class>
+</hibernate-mapping>

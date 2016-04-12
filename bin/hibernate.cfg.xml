@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">wcadmin01#</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/registry</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</property>
+        <property name="hibernate.show_sql">true</property>
+        <!-- MAPPING FILES -->
+        <mapping resource="com/hhiregistry/model/Member.hbm.xml"/>
+        <mapping resource="com/hhiregistry/model/Address.hbm.xml"/>
+        <mapping resource="com/hhiregistry/model/AddressPk.hbm.xml"/>
+        <mapping resource="com/hhiregistry/model/Cellgroup.hbm.xml"/>
+        <mapping resource="com/hhiregistry/model/Hhisettings.hbm.xml"/>
+        <mapping resource="com/hhiregistry/model/Groups.hbm.xml"/>
+        <mapping resource="com/hhiregistry/model/MemberGroups.hbm.xml"/>
+       
+        
+    </session-factory>
+</hibernate-configuration>

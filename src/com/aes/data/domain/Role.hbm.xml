@@ -6,7 +6,7 @@
     <class name="com.aes.data.domain.Role" table="role" catalog="aes">
         <id name="roleId" type="int">
             <column name="ROLE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="roleName" type="string">
             <column name="ROLE_NAME" length="30" not-null="true" />

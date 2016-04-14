@@ -6,7 +6,7 @@
     <class name="com.aes.data.domain.Address" table="address" catalog="aes">
         <id name="addressId" type="int">
             <column name="ADDRESS_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="addressline1" type="string">
             <column name="ADDRESSLINE1" length="30" />

@@ -6,9 +6,9 @@
     <class name="com.aes.data.domain.Person" table="person" catalog="aes">
         <id name="personId" type="int">
             <column name="PERSON_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="address" class="com.aes.data.domain.Address" fetch="select">
+        <many-to-one name="address" class="com.aes.data.domain.Address" fetch="select" lazy="false" cascade="all">
             <column name="ADDRESS_ID" not-null="true" />
         </many-to-one>
         <property name="name" type="string">

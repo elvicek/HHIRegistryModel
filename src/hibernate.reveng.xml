@@ -3,7 +3,7 @@
 
 <hibernate-reverse-engineering>
 
-	<table-filter match-catalog="hhiregistry"
+	<table-filter match-catalog="aes"
 		match-name="member_groups" />
 	<table-filter match-name="member" match-catalog="hhiregistry"></table-filter>
 	<table-filter match-name="groups" match-catalog="hhiregistry"></table-filter>

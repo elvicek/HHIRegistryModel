@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 14, 2016 4:36:50 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.aes.model.MemberPk" table="member_pk" catalog="aes">
+        <id name="memberPk" type="java.lang.Integer">
+            <column name="MEMBER_PK" />
+            <generator class="assigned" />
+        </id>
+    </class>
+</hibernate-mapping>

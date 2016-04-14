@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 14, 2016 4:36:50 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.aes.model.SurveyReadings" table="survey_readings" catalog="aes">
+        <id name="readingId" type="int">
+            <column name="READING_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="surveyId" type="int">
+            <column name="SURVEY_ID" not-null="true" />
+        </property>
+        <property name="location" type="string">
+            <column name="LOCATION" length="45" />
+        </property>
+        <property name="readingType" type="string">
+            <column name="READING_TYPE" length="45" />
+        </property>
+        <property name="unit" type="string">
+            <column name="UNIT" length="45" />
+        </property>
+        <property name="value" type="string">
+            <column name="VALUE" length="45" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="45" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CREATED_BY" length="30" />
+        </property>
+        <property name="createdDate" type="date">
+            <column name="CREATED_DATE" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

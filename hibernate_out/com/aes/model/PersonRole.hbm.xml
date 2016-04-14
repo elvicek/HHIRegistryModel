@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 14, 2016 4:36:50 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.aes.model.PersonRole" table="person_role" catalog="aes">
+        <composite-id name="id" class="com.aes.model.PersonRoleId">
+            <key-property name="personroleId" type="java.lang.Integer">
+                <column name="PERSONROLE_ID" />
+            </key-property>
+            <key-property name="personId" type="java.lang.Integer">
+                <column name="PERSON_ID" />
+            </key-property>
+            <key-property name="roleId" type="java.lang.Integer">
+                <column name="ROLE_ID" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

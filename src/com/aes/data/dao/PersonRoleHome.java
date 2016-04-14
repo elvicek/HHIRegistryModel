@@ -7,6 +7,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
+
+import com.aes.data.domain.PersonRole;
+
 import static org.hibernate.criterion.Example.create;
 
 /**
@@ -85,7 +88,7 @@ public class PersonRoleHome {
 		}
 	}
 
-	public PersonRole findById(com.aes.data.dao.PersonRoleId id) {
+	public PersonRole findById(int id) {
 		log.debug("getting PersonRole instance with id: " + id);
 		try {
 			PersonRole instance = (PersonRole) sessionFactory.getCurrentSession().get("com.aes.data.dao.PersonRole",

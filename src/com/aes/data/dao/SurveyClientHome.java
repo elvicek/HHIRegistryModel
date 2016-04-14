@@ -7,6 +7,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
+
+import com.aes.data.domain.SurveyClient;
+
 import static org.hibernate.criterion.Example.create;
 
 /**
@@ -85,7 +88,7 @@ public class SurveyClientHome {
 		}
 	}
 
-	public SurveyClient findById(com.aes.data.dao.SurveyClientId id) {
+	public SurveyClient findById(int id) {
 		log.debug("getting SurveyClient instance with id: " + id);
 		try {
 			SurveyClient instance = (SurveyClient) sessionFactory.getCurrentSession()

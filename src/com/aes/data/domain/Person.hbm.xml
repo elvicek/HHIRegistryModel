@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 14, 2016 4:52:22 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.aes.data.domain.Person" table="person" catalog="aes">
+        <id name="personId" type="int">
+            <column name="PERSON_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="address" class="com.aes.data.domain.Address" fetch="select">
+            <column name="ADDRESS_ID" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="NAME" length="30" />
+        </property>
+        <property name="surname" type="string">
+            <column name="SURNAME" length="30" />
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE" length="30" />
+        </property>
+        <property name="birthday" type="date">
+            <column name="BIRTHDAY" length="10" />
+        </property>
+        <property name="sex" type="java.lang.Character">
+            <column name="SEX" length="1" />
+        </property>
+        <property name="phone" type="string">
+            <column name="PHONE" length="15" />
+        </property>
+        <property name="workphone" type="string">
+            <column name="WORKPHONE" length="15" />
+        </property>
+        <property name="cellphone" type="string">
+            <column name="CELLPHONE" length="15" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="30" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" not-null="true" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CREATED_BY" length="30" />
+        </property>
+        <property name="createdDate" type="date">
+            <column name="CREATED_DATE" length="10" />
+        </property>
+        <set name="clients" table="client" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PERSON_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.data.domain.Client" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 14, 2016 4:52:22 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.aes.data.domain.Role" table="role" catalog="aes">
+        <id name="roleId" type="int">
+            <column name="ROLE_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="roleName" type="string">
+            <column name="ROLE_NAME" length="30" not-null="true" />
+        </property>
+        <property name="roleDescription" type="string">
+            <column name="ROLE_DESCRIPTION" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CREATED_BY" length="30" />
+        </property>
+        <property name="createdDate" type="date">
+            <column name="CREATED_DATE" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

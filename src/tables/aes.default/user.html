@@ -23,7 +23,7 @@
 	</div>
 
 		<h4>Schema aes.default</h4>
-		<h2>Table client</h2>
+		<h2>Table user</h2>
 
 			<p></p>
 
@@ -61,33 +61,8 @@
 			<tbody>
 					<tr>
 						<td>
-							<a href="#column_detail_CLIENT_ID">
-								CLIENT_ID
-							</a>
-						</td>
-						<td>
-							integer
-						</td>
-						<td>
-							255
-						</td>
-						<td>
-							19
-						</td>
-						<td>
-							2
-						</td>
-						<td>
-							false
-						</td>
-						<td>
-							true
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="#column_detail_CLIENT_NAME">
-								CLIENT_NAME
+							<a href="#column_detail_USERNAME">
+								USERNAME
 							</a>
 						</td>
 						<td>
@@ -103,23 +78,23 @@
 							2
 						</td>
 						<td>
-							true
+							false
 						</td>
 						<td>
-							false
+							true
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="#column_detail_DESCRIPTION">
-								DESCRIPTION
+							<a href="#column_detail_PASSWORD">
+								PASSWORD
 							</a>
 						</td>
 						<td>
-							varchar(40)
+							varchar(30)
 						</td>
 						<td>
-							40
+							30
 						</td>
 						<td>
 							19
@@ -128,7 +103,7 @@
 							2
 						</td>
 						<td>
-							true
+							false
 						</td>
 						<td>
 							false
@@ -186,12 +161,12 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="#column_detail_CONTACT_PERSON_ID">
-								CONTACT_PERSON_ID
+							<a href="#column_detail_PERSON_ID">
+								PERSON_ID
 							</a>
 						</td>
 						<td>
-							integer
+							N/D
 						</td>
 						<td>
 							255
@@ -211,8 +186,8 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="#column_detail_ADDRESS_ID">
-								ADDRESS_ID
+							<a href="#column_detail_ROLE_ID">
+								ROLE_ID
 							</a>
 						</td>
 						<td>
@@ -259,8 +234,8 @@
 								PRIMARY
 						</td>
 						<td>
-								<a href="#column_detail_CLIENT_ID">
-									CLIENT_ID
+								<a href="#column_detail_USERNAME">
+									USERNAME
 								</a>
 						</td>
 					</tr>
@@ -289,37 +264,37 @@
 				<tbody>
 						<tr>
 							<td>
-								fk_CLIENT_address1
+								fk_user_role1
 							</td>
 							<td>
-								<a href="address.html" target="generalFrame">
-									address
+								<a href="role.html" target="generalFrame">
+									role
 								</a>
 							</td>
 							<td>
-									<a href="#column_detail_ADDRESS_ID">
-										ADDRESS_ID
+									<a href="#column_detail_ROLE_ID">
+										ROLE_ID
 									</a>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								FKAF12F3CB9D1DF5F2
+								FK36EBCB3C791842
 							</td>
 							<td>
-								<a href="address.html" target="generalFrame">
-									address
+								<a href="role.html" target="generalFrame">
+									role
 								</a>
 							</td>
 							<td>
-									<a href="#column_detail_ADDRESS_ID">
-										ADDRESS_ID
+									<a href="#column_detail_ROLE_ID">
+										ROLE_ID
 									</a>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								FKAF12F3CB8A6A3C83
+								fk_user_person
 							</td>
 							<td>
 								<a href="person.html" target="generalFrame">
@@ -327,14 +302,14 @@
 								</a>
 							</td>
 							<td>
-									<a href="#column_detail_CONTACT_PERSON_ID">
-										CONTACT_PERSON_ID
+									<a href="#column_detail_PERSON_ID">
+										PERSON_ID
 									</a>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								fk_CLIENT_person1
+								FK36EBCB1D78C5E2
 							</td>
 							<td>
 								<a href="person.html" target="generalFrame">
@@ -342,8 +317,8 @@
 								</a>
 							</td>
 							<td>
-									<a href="#column_detail_CONTACT_PERSON_ID">
-										CONTACT_PERSON_ID
+									<a href="#column_detail_PERSON_ID">
+										PERSON_ID
 									</a>
 							</td>
 						</tr>
@@ -372,8 +347,8 @@
 								PRIMARY
 							</td>
 							<td>
-									<a href="#column_detail_CLIENT_ID">
-										CLIENT_ID
+									<a href="#column_detail_USERNAME">
+										USERNAME
 									</a>
 							</td>
 						</tr>
@@ -399,21 +374,21 @@
 				<tbody>
 						<tr>
 							<td>
-								fk_CLIENT_person1_idx
+								fk_user_person
 							</td>
 							<td>
-									<a href="#column_detail_CONTACT_PERSON_ID">
-										CONTACT_PERSON_ID
+									<a href="#column_detail_PERSON_ID">
+										PERSON_ID
 									</a>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								fk_CLIENT_address1_idx
+								fk_user_role1_idx
 							</td>
 							<td>
-									<a href="#column_detail_ADDRESS_ID">
-										ADDRESS_ID
+									<a href="#column_detail_ROLE_ID">
+										ROLE_ID
 									</a>
 							</td>
 						</tr>
@@ -424,14 +399,14 @@
 				Column Detail
 			</p>
 				
-				<h3 id="column_detail_CLIENT_ID">CLIENT_ID</h3>
+				<h3 id="column_detail_USERNAME">USERNAME</h3>
 				
 				<ul>
 					<li>
-						<strong>Type:</strong> integer
+						<strong>Type:</strong> varchar(30)
 					</li>
 					<li>
-						<strong>Length:</strong> 255
+						<strong>Length:</strong> 30
 					</li>
 					<li>
 						<strong>Precision:</strong> 19
@@ -452,7 +427,7 @@
 
 
 				<hr/>
-				<h3 id="column_detail_CLIENT_NAME">CLIENT_NAME</h3>
+				<h3 id="column_detail_PASSWORD">PASSWORD</h3>
 				
 				<ul>
 					<li>
@@ -468,35 +443,7 @@
 						<strong>Scale:</strong> 2
 					</li>
 					<li>
-						<strong>Nullable:</strong> true
-					</li>
-					<li>
-						<strong>Unique:</strong> false
-					</li>
-					<li>
-						<strong>Comment:</strong> 
-					</li>
-				</ul>
-
-
-				<hr/>
-				<h3 id="column_detail_DESCRIPTION">DESCRIPTION</h3>
-				
-				<ul>
-					<li>
-						<strong>Type:</strong> varchar(40)
-					</li>
-					<li>
-						<strong>Length:</strong> 40
-					</li>
-					<li>
-						<strong>Precision:</strong> 19
-					</li>
-					<li>
-						<strong>Scale:</strong> 2
-					</li>
-					<li>
-						<strong>Nullable:</strong> true
+						<strong>Nullable:</strong> false
 					</li>
 					<li>
 						<strong>Unique:</strong> false
@@ -564,11 +511,11 @@
 
 
 				<hr/>
-				<h3 id="column_detail_CONTACT_PERSON_ID">CONTACT_PERSON_ID</h3>
+				<h3 id="column_detail_PERSON_ID">PERSON_ID</h3>
 				
 				<ul>
 					<li>
-						<strong>Type:</strong> integer
+						<strong>Type:</strong> N/D
 					</li>
 					<li>
 						<strong>Length:</strong> 255
@@ -592,7 +539,7 @@
 
 
 				<hr/>
-				<h3 id="column_detail_ADDRESS_ID">ADDRESS_ID</h3>
+				<h3 id="column_detail_ROLE_ID">ROLE_ID</h3>
 				
 				<ul>
 					<li>

@@ -25,11 +25,11 @@
 		<h4>
 				com.aes.data.domain.doc
 		</h4>
-		<h2>Entity Role</h2>
+		<h2>Entity User</h2>
 		
 		<ul class="EntityHierarchy">
 			<li>
-				com.aes.data.domain.doc.Role
+				com.aes.data.domain.doc.User
 			</li>
 		</ul>
 
@@ -63,15 +63,15 @@
 				<tbody>
 						<tr>
 							<td>
-								<a href="#identifier_detail_roleId">
-									roleId
+								<a href="#identifier_detail_username">
+									username
 								</a>
 							</td>
 							<td>
 								Column
 							</td>
 							<td>
-								int
+								String
 							</td>
 							<td>
 									&nbsp;
@@ -160,14 +160,14 @@
 						</tr>
 						<tr>
 							<td rowspan="1">
-								<a href="#property_detail_roleDescription">
-									roleDescription
+								<a href="#property_detail_password">
+									password
 								</a>
 							</td>
 	
 									<td>
 										<a href="#property_summary">
-											ROLE_DESCRIPTION
+											PASSWORD
 										</a>
 									</td>
 	
@@ -185,14 +185,14 @@
 						</tr>
 						<tr>
 							<td rowspan="1">
-								<a href="#property_detail_roleName">
-									roleName
+								<a href="#property_detail_person">
+									person
 								</a>
 							</td>
 	
 									<td>
 										<a href="#property_summary">
-											ROLE_NAME
+											PERSON_ID
 										</a>
 									</td>
 	
@@ -201,7 +201,7 @@
 							</td>
 	
 							<td rowspan="1">
-									String
+									Person
 							</td>
 	
 							<td rowspan="1">
@@ -209,25 +209,27 @@
 							</td>
 						</tr>
 						<tr>
-							<td >
-								<a href="#property_detail_users">
-									users
+							<td rowspan="1">
+								<a href="#property_detail_role">
+									role
 								</a>
 							</td>
 	
-								<td>
-									&nbsp;
-								</td>
+									<td>
+										<a href="#property_summary">
+											ROLE_ID
+										</a>
+									</td>
 	
-							<td >
+							<td rowspan="1">
 								property (<a href="#property_summary">get</a> / <a href="#property_summary">set</a>)
 							</td>
 	
-							<td >
-									Set&lt;User&gt;
+							<td rowspan="1">
+									Role
 							</td>
 	
-							<td >
+							<td rowspan="1">
 									&nbsp;
 							</td>
 						</tr>
@@ -239,21 +241,21 @@
 			<p id="identifier_detail" class="MainTableHeading">
 				Identifier Detail
 			</p>
-				<h3 id="identifier_detail_roleId">roleId</h3>
+				<h3 id="identifier_detail_username">username</h3>
 
 
 			<p id="property_detail" class="MainTableHeading">
 				Property Detail
 			</p>
-				<h3 id="property_detail_roleName">roleName</h3>
+				<h3 id="property_detail_role">role</h3>
 				<hr/>
-				<h3 id="property_detail_roleDescription">roleDescription</h3>
+				<h3 id="property_detail_person">person</h3>
+				<hr/>
+				<h3 id="property_detail_password">password</h3>
 				<hr/>
 				<h3 id="property_detail_createdBy">createdBy</h3>
 				<hr/>
 				<h3 id="property_detail_createdDate">createdDate</h3>
-				<hr/>
-				<h3 id="property_detail_users">users</h3>
 				<hr/>
 
 	</body>

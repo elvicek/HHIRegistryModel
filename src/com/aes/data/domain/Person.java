@@ -1,5 +1,5 @@
 package com.aes.data.domain;
-// Generated Apr 14, 2016 4:52:22 PM by Hibernate Tools 3.5.0.Final
+// Generated Apr 14, 2016 5:52:50 PM by Hibernate Tools 3.5.0.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -24,6 +24,7 @@ public class Person implements java.io.Serializable {
 	private String email;
 	private String createdBy;
 	private Date createdDate;
+	private Set<User> users = new HashSet<User>(0);
 	private Set<Client> clients = new HashSet<Client>(0);
 
 	public Person() {
@@ -37,7 +38,7 @@ public class Person implements java.io.Serializable {
 
 	public Person(int personId, Address address, String name, String surname, String title, Date birthday,
 			Character sex, String phone, String workphone, String cellphone, String description, String email,
-			String createdBy, Date createdDate, Set<Client> clients) {
+			String createdBy, Date createdDate, Set<User> users, Set<Client> clients) {
 		this.personId = personId;
 		this.address = address;
 		this.name = name;
@@ -52,6 +53,7 @@ public class Person implements java.io.Serializable {
 		this.email = email;
 		this.createdBy = createdBy;
 		this.createdDate = createdDate;
+		this.users = users;
 		this.clients = clients;
 	}
 
@@ -165,6 +167,14 @@ public class Person implements java.io.Serializable {
 
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
+	}
+
+	public Set<User> getUsers() {
+		return this.users;
+	}
+
+	public void setUsers(Set<User> users) {
+		this.users = users;
 	}
 
 	public Set<Client> getClients() {

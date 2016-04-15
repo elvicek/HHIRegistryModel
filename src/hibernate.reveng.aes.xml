@@ -9,5 +9,6 @@
   <table-filter match-catalog="aes" match-name="person_role"/>
   <table-filter match-catalog="aes" match-name="role"/>
   <table-filter match-catalog="aes" match-name="survey_client"/>
+  <table-filter match-catalog="aes" match-name="survey"/>
   <table-filter match-catalog="aes" match-name="survey_readings"/>
 </hibernate-reverse-engineering>

@@ -38,3 +38,7 @@ INSERT INTO role (role_name, role_description, created_by, created_date) VALUES 
 INSERT INTO role (role_name, role_description, created_by, created_date) VALUES ('engineer','The=is is the ventilation engineer role','installer',CURRENT_TIMESTAMP);
 -- Add user role
 INSERT INTO user_role (username, role_name) VALUES ('admin', 'admin');
+
+USE mysql;
+CREATE USER 'realm_access'@'localhost' IDENTIFIED BY 'realmpass';
+GRANT SELECT ON aes.* TO realm_access@localhost;

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 15, 2016 10:03:46 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.aes.data.domain.Survey" table="survey" catalog="aes">
+        <id name="surveyId" type="int">
+            <column name="SURVEY_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="user" class="com.aes.data.domain.User" fetch="select">
+            <column name="USERNAME" length="30" not-null="true" />
+        </many-to-one>
+        <property name="surveyName" type="string">
+            <column name="SURVEY_NAME" length="100" unique="true" />
+        </property>
+        <property name="surveyType" type="string">
+            <column name="SURVEY_TYPE" length="40" />
+        </property>
+        <property name="workSummary" type="string">
+            <column name="WORK_SUMMARY" length="500" />
+        </property>
+        <property name="surveyRequestedDate" type="string">
+            <column name="SURVEY_REQUESTED_DATE" length="45" />
+        </property>
+        <property name="surveyDate" type="string">
+            <column name="SURVEY_DATE" length="45" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CREATED_BY" length="30" />
+        </property>
+        <property name="createdDate" type="date">
+            <column name="CREATED_DATE" length="10" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="45" />
+        </property>
+        <set name="surveyReadingses" table="survey_readings" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SURVEY_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.data.domain.SurveyReadings" />
+        </set>
+        <set name="clients" table="survey_client" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="SURVEY_ID" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.aes.data.domain.Client">
+                <column name="CLIENT_ID" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

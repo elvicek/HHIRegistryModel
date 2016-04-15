@@ -1,16 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Apr 15, 2016 10:03:46 AM by Hibernate Tools 3.5.0.Final -->
+<!-- Generated Apr 15, 2016 4:26:55 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.aes.data.domain.User" table="user" catalog="aes">
         <id name="username" type="string">
             <column name="USERNAME" length="30" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="role" class="com.aes.data.domain.Role" fetch="select">
-            <column name="ROLE_ID" not-null="true" />
-        </many-to-one>
         <many-to-one name="person" class="com.aes.data.domain.Person" fetch="select">
             <column name="PERSON_ID" not-null="true" />
         </many-to-one>
@@ -28,6 +25,14 @@
                 <column name="USERNAME" length="30" not-null="true" />
             </key>
             <one-to-many class="com.aes.data.domain.Survey" />
+        </set>
+        <set name="roles" table="user_role" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="username" length="30" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.aes.data.domain.Role">
+                <column name="role_name" length="45" not-null="true" />
+            </many-to-many>
         </set>
     </class>
 </hibernate-mapping>

@@ -1,5 +1,5 @@
 package com.aes.data.domain;
-// Generated Apr 15, 2016 10:03:07 AM by Hibernate Tools 3.5.0.Final
+// Generated Apr 15, 2016 4:26:55 PM by Hibernate Tools 3.5.0.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -11,32 +11,31 @@ import java.util.Set;
 public class User implements java.io.Serializable {
 
 	private String username;
-	private Role role;
 	private Person person;
 	private String password;
 	private String createdBy;
 	private Date createdDate;
 	private Set<Survey> surveys = new HashSet<Survey>(0);
+	private Set<Role> roles = new HashSet<Role>(0);
 
 	public User() {
 	}
 
-	public User(String username, Role role, Person person, String password) {
+	public User(String username, Person person, String password) {
 		this.username = username;
-		this.role = role;
 		this.person = person;
 		this.password = password;
 	}
 
-	public User(String username, Role role, Person person, String password, String createdBy, Date createdDate,
-			Set<Survey> surveys) {
+	public User(String username, Person person, String password, String createdBy, Date createdDate,
+			Set<Survey> surveys, Set<Role> roles) {
 		this.username = username;
-		this.role = role;
 		this.person = person;
 		this.password = password;
 		this.createdBy = createdBy;
 		this.createdDate = createdDate;
 		this.surveys = surveys;
+		this.roles = roles;
 	}
 
 	public String getUsername() {
@@ -45,14 +44,6 @@ public class User implements java.io.Serializable {
 
 	public void setUsername(String username) {
 		this.username = username;
-	}
-
-	public Role getRole() {
-		return this.role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
 	}
 
 	public Person getPerson() {
@@ -93,6 +84,14 @@ public class User implements java.io.Serializable {
 
 	public void setSurveys(Set<Survey> surveys) {
 		this.surveys = surveys;
+	}
+
+	public Set<Role> getRoles() {
+		return this.roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
 
 }

@@ -1,5 +1,5 @@
 package com.aes.data.domain;
-// Generated Apr 15, 2016 10:03:07 AM by Hibernate Tools 3.5.0.Final
+// Generated Apr 15, 2016 4:26:55 PM by Hibernate Tools 3.5.0.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -10,7 +10,6 @@ import java.util.Set;
  */
 public class Role implements java.io.Serializable {
 
-	private int roleId;
 	private String roleName;
 	private String roleDescription;
 	private String createdBy;
@@ -20,27 +19,16 @@ public class Role implements java.io.Serializable {
 	public Role() {
 	}
 
-	public Role(int roleId, String roleName) {
-		this.roleId = roleId;
+	public Role(String roleName) {
 		this.roleName = roleName;
 	}
 
-	public Role(int roleId, String roleName, String roleDescription, String createdBy, Date createdDate,
-			Set<User> users) {
-		this.roleId = roleId;
+	public Role(String roleName, String roleDescription, String createdBy, Date createdDate, Set<User> users) {
 		this.roleName = roleName;
 		this.roleDescription = roleDescription;
 		this.createdBy = createdBy;
 		this.createdDate = createdDate;
 		this.users = users;
-	}
-
-	public int getRoleId() {
-		return this.roleId;
-	}
-
-	public void setRoleId(int roleId) {
-		this.roleId = roleId;
 	}
 
 	public String getRoleName() {

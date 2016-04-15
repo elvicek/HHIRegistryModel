@@ -26,3 +26,15 @@ INSERT INTO dbsettings (ID,TYPE,DESCRIPTION) VALUES (25,7,'AREA');
 INSERT INTO dbsettings (ID,TYPE,DESCRIPTION) VALUES (26,7,'VOLUME');
 INSERT INTO dbsettings (ID,TYPE,DESCRIPTION) VALUES (27,7,'VELOCITY');
 INSERT INTO dbsettings (ID,TYPE,DESCRIPTION) VALUES (28,7,'PRESSURE');
+-- Add Admin User Address
+INSERT INTO ADDRESS(address_id,addressline1,addressline2,created_by,created_date) values(1,'internal','internal','installer',CURRENT_TIMESTAMP);
+-- Add Admin Person
+INSERT INTO PERSON(person_id,address_id,email,created_by,created_date) values(1,1,'admin@aes.co.zw','installer',CURRENT_TIMESTAMP);
+-- Add Admin User
+INSERT INTO user (username, password, person_id,created_by, created_date) VALUES ('admin', 'aesworld',1,'installer',CURRENT_TIMESTAMP);
+-- Add roles
+INSERT INTO role (role_name, role_description, created_by, created_date) VALUES ('admin','This is the administrator of the application with full privilleges','installer',CURRENT_TIMESTAMP);
+INSERT INTO role (role_name, role_description, created_by, created_date) VALUES ('secretary','This is the secretary or officer role','installer',CURRENT_TIMESTAMP);
+INSERT INTO role (role_name, role_description, created_by, created_date) VALUES ('engineer','The=is is the ventilation engineer role','installer',CURRENT_TIMESTAMP);
+-- Add user role
+INSERT INTO user_role (username, role_name) VALUES ('admin', 'admin');

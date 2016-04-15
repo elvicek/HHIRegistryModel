@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Apr 15, 2016 9:48:50 AM by Hibernate Tools 3.5.0.Final -->
+<!-- Generated Apr 15, 2016 10:03:46 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.aes.data.domain.SurveyReadings" table="survey_readings" catalog="aes">
         <id name="readingId" type="int">
             <column name="READING_ID" />
             <generator class="assigned" />
         </id>
-        <property name="surveyId" type="int">
+        <many-to-one name="survey" class="com.aes.data.domain.Survey" fetch="select">
             <column name="SURVEY_ID" not-null="true" />
-        </property>
+        </many-to-one>
         <property name="location" type="string">
             <column name="LOCATION" length="45" />
         </property>

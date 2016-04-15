@@ -14,5 +14,14 @@
         <property name="hibernate.search.autoregister_listeners">false</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.validator.apply_to_ddl">false</property>
+        <mapping resource="com/aes/data/domain/Address.hbm.xml" />
+        <mapping resource="com/aes/data/domain/Survey.hbm.xml" />
+        <mapping resource="com/aes/data/domain/PersonRole.hbm.xml" />
+        <mapping resource="com/aes/data/domain/SurveyReadings.hbm.xml" />
+        <mapping resource="com/aes/data/domain/Client.hbm.xml" />
+        <mapping resource="com/aes/data/domain/User.hbm.xml" />
+        <mapping resource="com/aes/data/domain/Role.hbm.xml" />
+        <mapping resource="com/aes/data/domain/Dbsettings.hbm.xml" />
+        <mapping resource="com/aes/data/domain/Person.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

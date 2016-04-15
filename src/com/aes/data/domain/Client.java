@@ -1,5 +1,5 @@
 package com.aes.data.domain;
-// Generated Apr 15, 2016 9:48:50 AM by Hibernate Tools 3.5.0.Final
+// Generated Apr 15, 2016 10:03:07 AM by Hibernate Tools 3.5.0.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -17,7 +17,7 @@ public class Client implements java.io.Serializable {
 	private String description;
 	private String createdBy;
 	private Date createdDate;
-	private Set<SurveyClient> surveyClients = new HashSet<SurveyClient>(0);
+	private Set<Survey> surveys = new HashSet<Survey>(0);
 
 	public Client() {
 	}
@@ -29,7 +29,7 @@ public class Client implements java.io.Serializable {
 	}
 
 	public Client(int clientId, Address address, Person person, String clientName, String description, String createdBy,
-			Date createdDate, Set<SurveyClient> surveyClients) {
+			Date createdDate, Set<Survey> surveys) {
 		this.clientId = clientId;
 		this.address = address;
 		this.person = person;
@@ -37,7 +37,7 @@ public class Client implements java.io.Serializable {
 		this.description = description;
 		this.createdBy = createdBy;
 		this.createdDate = createdDate;
-		this.surveyClients = surveyClients;
+		this.surveys = surveys;
 	}
 
 	public int getClientId() {
@@ -96,12 +96,12 @@ public class Client implements java.io.Serializable {
 		this.createdDate = createdDate;
 	}
 
-	public Set<SurveyClient> getSurveyClients() {
-		return this.surveyClients;
+	public Set<Survey> getSurveys() {
+		return this.surveys;
 	}
 
-	public void setSurveyClients(Set<SurveyClient> surveyClients) {
-		this.surveyClients = surveyClients;
+	public void setSurveys(Set<Survey> surveys) {
+		this.surveys = surveys;
 	}
 
 }

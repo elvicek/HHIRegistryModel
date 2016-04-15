@@ -1,5 +1,5 @@
 package com.aes.data.domain;
-// Generated Apr 15, 2016 9:48:50 AM by Hibernate Tools 3.5.0.Final
+// Generated Apr 15, 2016 10:03:07 AM by Hibernate Tools 3.5.0.Final
 
 import java.util.Date;
 
@@ -9,7 +9,7 @@ import java.util.Date;
 public class SurveyReadings implements java.io.Serializable {
 
 	private int readingId;
-	private int surveyId;
+	private Survey survey;
 	private String location;
 	private String readingType;
 	private String unit;
@@ -21,15 +21,15 @@ public class SurveyReadings implements java.io.Serializable {
 	public SurveyReadings() {
 	}
 
-	public SurveyReadings(int readingId, int surveyId) {
+	public SurveyReadings(int readingId, Survey survey) {
 		this.readingId = readingId;
-		this.surveyId = surveyId;
+		this.survey = survey;
 	}
 
-	public SurveyReadings(int readingId, int surveyId, String location, String readingType, String unit, String value,
+	public SurveyReadings(int readingId, Survey survey, String location, String readingType, String unit, String value,
 			String description, String createdBy, Date createdDate) {
 		this.readingId = readingId;
-		this.surveyId = surveyId;
+		this.survey = survey;
 		this.location = location;
 		this.readingType = readingType;
 		this.unit = unit;
@@ -47,12 +47,12 @@ public class SurveyReadings implements java.io.Serializable {
 		this.readingId = readingId;
 	}
 
-	public int getSurveyId() {
-		return this.surveyId;
+	public Survey getSurvey() {
+		return this.survey;
 	}
 
-	public void setSurveyId(int surveyId) {
-		this.surveyId = surveyId;
+	public void setSurvey(Survey survey) {
+		this.survey = survey;
 	}
 
 	public String getLocation() {

@@ -1,5 +1,5 @@
 package com.aes.data.dao;
-// Generated Apr 14, 2016 5:55:48 PM by Hibernate Tools 3.5.0.Final
+// Generated Apr 15, 2016 10:05:06 AM by Hibernate Tools 3.5.0.Final
 
 import java.util.List;
 import javax.naming.InitialContext;
@@ -7,9 +7,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
-
-import com.aes.data.domain.Person;
-
 import static org.hibernate.criterion.Example.create;
 
 /**

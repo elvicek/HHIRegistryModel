@@ -35,7 +35,7 @@ INSERT INTO user (username, password, person_id,created_by, created_date) VALUES
 -- Add roles
 INSERT INTO role (role_name, role_description, created_by, created_date) VALUES ('admin','This is the administrator of the application with full privilleges','installer',CURRENT_TIMESTAMP);
 INSERT INTO role (role_name, role_description, created_by, created_date) VALUES ('secretary','This is the secretary or officer role','installer',CURRENT_TIMESTAMP);
-INSERT INTO role (role_name, role_description, created_by, created_date) VALUES ('engineer','The=is is the ventilation engineer role','installer',CURRENT_TIMESTAMP);
+INSERT INTO role (role_name, role_description, created_by, created_date) VALUES ('engineer','This is the ventilation engineer role','installer',CURRENT_TIMESTAMP);
 -- Add user role
 INSERT INTO user_role (username, role_name) VALUES ('admin', 'admin');
 

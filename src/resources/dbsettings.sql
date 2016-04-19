@@ -26,6 +26,9 @@ INSERT INTO dbsettings (ID,TYPE,DESCRIPTION) VALUES (25,7,'AREA');
 INSERT INTO dbsettings (ID,TYPE,DESCRIPTION) VALUES (26,7,'VOLUME');
 INSERT INTO dbsettings (ID,TYPE,DESCRIPTION) VALUES (27,7,'VELOCITY');
 INSERT INTO dbsettings (ID,TYPE,DESCRIPTION) VALUES (28,7,'PRESSURE');
+INSERT INTO dbsettings (ID,TYPE,DESCRIPTION) VALUES (29,8,'5');
+INSERT INTO dbsettings (ID,TYPE,DESCRIPTION) VALUES (30,9,'5');
+
 -- Add Admin User Address
 INSERT INTO ADDRESS(address_id,addressline1,addressline2,created_by,created_date) values(1,'internal','internal','installer',CURRENT_TIMESTAMP);
 -- Add Admin Person

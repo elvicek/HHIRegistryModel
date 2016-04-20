@@ -6,7 +6,7 @@
     <class name="com.aes.data.domain.Survey" table="survey" catalog="aes">
         <id name="surveyId" type="int">
             <column name="SURVEY_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="user" class="com.aes.data.domain.User" fetch="select">
             <column name="USERNAME" length="30" not-null="true" />

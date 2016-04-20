@@ -30,11 +30,11 @@ INSERT INTO dbsettings (ID,TYPE,DESCRIPTION) VALUES (29,8,'5');
 INSERT INTO dbsettings (ID,TYPE,DESCRIPTION) VALUES (30,9,'5');
 
 -- Add Admin User Address
-INSERT INTO ADDRESS(address_id,addressline1,addressline2,created_by,created_date) values(1,'internal','internal','installer',CURRENT_TIMESTAMP);
+INSERT INTO ADDRESS(address_id,addressline1,addressline2,created_by,created_date) values(9999999,'internal','internal','installer',CURRENT_TIMESTAMP);
 -- Add Admin Person
-INSERT INTO PERSON(person_id,address_id,email,created_by,created_date) values(1,1,'admin@aes.co.zw','installer',CURRENT_TIMESTAMP);
+INSERT INTO PERSON(person_id,address_id,email,created_by,created_date) values(9999999,9999999,'admin@aes.co.zw','installer',CURRENT_TIMESTAMP);
 -- Add Admin User
-INSERT INTO user (username, password, person_id,created_by, created_date) VALUES ('admin', 'aesworld',1,'installer',CURRENT_TIMESTAMP);
+INSERT INTO user (username, password, person_id,created_by, created_date) VALUES ('admin', 'aesworld',9999999,'installer',CURRENT_TIMESTAMP);
 -- Add roles
 INSERT INTO role (role_name, role_description, created_by, created_date) VALUES ('admin','This is the administrator of the application with full privilleges','installer',CURRENT_TIMESTAMP);
 INSERT INTO role (role_name, role_description, created_by, created_date) VALUES ('secretary','This is the secretary or officer role','installer',CURRENT_TIMESTAMP);

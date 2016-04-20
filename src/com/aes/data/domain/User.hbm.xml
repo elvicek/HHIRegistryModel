@@ -8,7 +8,7 @@
             <column name="USERNAME" length="30" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="person" class="com.aes.data.domain.Person" fetch="select" lazy="false">
+        <many-to-one name="person" class="com.aes.data.domain.Person" fetch="select" lazy="false" cascade="save-update">
             <column name="PERSON_ID" not-null="true" />
         </many-to-one>
         <property name="password" type="string">

@@ -15,7 +15,7 @@
             <column name="CONTACT_PERSON_ID" not-null="true" />
         </many-to-one>
         <property name="clientName" type="string">
-            <column name="CLIENT_NAME" length="30" />
+            <column name="CLIENT_NAME" length="30" not-null="true" unique="true"/>
         </property>
         <property name="description" type="string">
             <column name="DESCRIPTION" length="40" />

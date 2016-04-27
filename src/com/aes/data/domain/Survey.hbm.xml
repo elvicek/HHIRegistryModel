@@ -9,7 +9,7 @@
             <generator class="identity" />
         </id>
         <many-to-one name="user" class="com.aes.data.domain.User" fetch="select">
-            <column name="USERNAME" length="30" not-null="true" />
+            <column name="USERNAME" length="30" />
         </many-to-one>
         <property name="surveyName" type="string">
             <column name="SURVEY_NAME" length="100" unique="true" />
@@ -20,10 +20,10 @@
         <property name="workSummary" type="string">
             <column name="WORK_SUMMARY" length="500" />
         </property>
-        <property name="surveyRequestedDate" type="string">
+        <property name="surveyRequestedDate" type="date">
             <column name="SURVEY_REQUESTED_DATE" length="45" />
         </property>
-        <property name="surveyDate" type="string">
+        <property name="surveyDate" type="date">
             <column name="SURVEY_DATE" length="45" />
         </property>
         <property name="createdBy" type="string">

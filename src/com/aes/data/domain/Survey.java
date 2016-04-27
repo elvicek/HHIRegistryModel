@@ -15,8 +15,8 @@ public class Survey implements java.io.Serializable {
 	private String surveyName;
 	private String surveyType;
 	private String workSummary;
-	private String surveyRequestedDate;
-	private String surveyDate;
+	private Date surveyRequestedDate;
+	private Date surveyDate;
 	private String createdBy;
 	private Date createdDate;
 	private String status;
@@ -32,7 +32,7 @@ public class Survey implements java.io.Serializable {
 	}
 
 	public Survey(int surveyId, User user, String surveyName, String surveyType, String workSummary,
-			String surveyRequestedDate, String surveyDate, String createdBy, Date createdDate, String status,
+			Date surveyRequestedDate, Date surveyDate, String createdBy, Date createdDate, String status,
 			Set<SurveyReadings> surveyReadingses, Set<Client> clients) {
 		this.surveyId = surveyId;
 		this.user = user;
@@ -88,21 +88,7 @@ public class Survey implements java.io.Serializable {
 		this.workSummary = workSummary;
 	}
 
-	public String getSurveyRequestedDate() {
-		return this.surveyRequestedDate;
-	}
-
-	public void setSurveyRequestedDate(String surveyRequestedDate) {
-		this.surveyRequestedDate = surveyRequestedDate;
-	}
-
-	public String getSurveyDate() {
-		return this.surveyDate;
-	}
-
-	public void setSurveyDate(String surveyDate) {
-		this.surveyDate = surveyDate;
-	}
+	
 
 	public String getCreatedBy() {
 		return this.createdBy;
@@ -142,6 +128,22 @@ public class Survey implements java.io.Serializable {
 
 	public void setClients(Set<Client> clients) {
 		this.clients = clients;
+	}
+
+	public Date getSurveyRequestedDate() {
+		return surveyRequestedDate;
+	}
+
+	public void setSurveyRequestedDate(Date surveyRequestedDate) {
+		this.surveyRequestedDate = surveyRequestedDate;
+	}
+
+	public Date getSurveyDate() {
+		return surveyDate;
+	}
+
+	public void setSurveyDate(Date surveyDate) {
+		this.surveyDate = surveyDate;
 	}
 
 }

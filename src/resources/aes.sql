@@ -8,15 +8,6 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `mydb` ;
-
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
--- -----------------------------------------------------
 -- Schema aes
 -- -----------------------------------------------------
 DROP SCHEMA IF EXISTS `aes` ;
@@ -25,7 +16,7 @@ DROP SCHEMA IF EXISTS `aes` ;
 -- Schema aes
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `aes` DEFAULT CHARACTER SET latin1 ;
-USE `mydb` ;
+
 USE `aes` ;
 
 -- -----------------------------------------------------
@@ -187,11 +178,11 @@ CREATE TABLE IF NOT EXISTS `aes`.`survey` (
   `CREATED_BY` VARCHAR(30) NULL DEFAULT NULL,
   `CREATED_DATE` DATE NULL DEFAULT NULL,
   `STATUS` VARCHAR(45) NULL DEFAULT NULL,
-  `USERNAME` VARCHAR(16),
+  `USERNAME` VARCHAR(16) NOT NULL,
   PRIMARY KEY (`SURVEY_ID`),
   CONSTRAINT `fk_survey_user1`
     FOREIGN KEY (`USERNAME`)
-    REFERENCES `mydb`.`user` (`USERNAME`)
+    REFERENCES `aes`.`user` (`USERNAME`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB

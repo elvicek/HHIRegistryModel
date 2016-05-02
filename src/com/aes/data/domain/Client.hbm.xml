@@ -26,13 +26,19 @@
         <property name="createdDate" type="date">
             <column name="CREATED_DATE" length="10" />
         </property>
-        <set name="surveys" table="survey_client" inverse="true" lazy="true" fetch="select">
+        <!--  set name="surveys" table="survey_client" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="CLIENT_ID" not-null="true" />
             </key>
             <many-to-many entity-name="com.aes.data.domain.Survey">
                 <column name="SURVEY_ID" not-null="true" />
             </many-to-many>
+        </set -->
+        <set name="surveys" table="survey" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="CLIENT_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.data.domain.Survey" />
         </set>
     </class>
 </hibernate-mapping>

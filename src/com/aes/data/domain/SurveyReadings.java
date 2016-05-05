@@ -1,6 +1,7 @@
 package com.aes.data.domain;
 // Generated Apr 15, 2016 4:26:55 PM by Hibernate Tools 3.5.0.Final
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -14,6 +15,9 @@ public class SurveyReadings implements java.io.Serializable {
 	private String readingType;
 	private String unit;
 	private String value;
+	private BigDecimal density;
+	private BigDecimal velocity;
+	private BigDecimal dynamicPressure;
 	private String description;
 	private String createdBy;
 	private Date createdDate;
@@ -26,14 +30,20 @@ public class SurveyReadings implements java.io.Serializable {
 		this.survey = survey;
 	}
 
+	
 	public SurveyReadings(int readingId, Survey survey, String location, String readingType, String unit, String value,
-			String description, String createdBy, Date createdDate) {
+			BigDecimal density, BigDecimal velocity, BigDecimal dynamicPressure, String description, String createdBy,
+			Date createdDate) {
+		super();
 		this.readingId = readingId;
 		this.survey = survey;
 		this.location = location;
 		this.readingType = readingType;
 		this.unit = unit;
 		this.value = value;
+		this.density = density;
+		this.velocity = velocity;
+		this.dynamicPressure = dynamicPressure;
 		this.description = description;
 		this.createdBy = createdBy;
 		this.createdDate = createdDate;
@@ -109,6 +119,30 @@ public class SurveyReadings implements java.io.Serializable {
 
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
+	}
+
+	public BigDecimal getDensity() {
+		return density;
+	}
+
+	public void setDensity(BigDecimal density) {
+		this.density = density;
+	}
+
+	public BigDecimal getVelocity() {
+		return velocity;
+	}
+
+	public void setVelocity(BigDecimal velocity) {
+		this.velocity = velocity;
+	}
+
+	public BigDecimal getDynamicPressure() {
+		return dynamicPressure;
+	}
+
+	public void setDynamicPressure(BigDecimal dynamicPressure) {
+		this.dynamicPressure = dynamicPressure;
 	}
 
 }

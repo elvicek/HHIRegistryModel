@@ -23,6 +23,13 @@
         <property name="value" type="string">
             <column name="VALUE" length="45" />
         </property>
+        <property name="dynamicPressure" type="java.math.BigDecimal">
+            <column name="DYNAMIC_PRESSURE" precision="10" scale="2"/>
+        </property><property name="density" type="java.math.BigDecimal">
+            <column name="DENSITY" precision="10" scale="2"/>
+        </property><property name="velocity" type="java.math.BigDecimal">
+            <column name="VELOCITY" precision="10" scale="2"/>
+        </property>
         <property name="description" type="string">
             <column name="DESCRIPTION" length="45" />
         </property>

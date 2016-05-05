@@ -35,7 +35,7 @@
         <property name="status" type="string">
             <column name="STATUS" length="45" />
         </property>
-        <set name="surveyReadingses" table="survey_readings" inverse="true" lazy="true" fetch="select">
+        <set name="surveyReadingses" table="survey_readings" inverse="true" lazy="false" fetch="select" cascade="save-update, delete">
             <key>
                 <column name="SURVEY_ID" not-null="true" />
             </key>

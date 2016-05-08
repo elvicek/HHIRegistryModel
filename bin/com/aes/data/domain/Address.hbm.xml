@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 15, 2016 4:26:55 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.aes.data.domain.Address" table="address" catalog="aes">
+        <id name="addressId" type="int">
+            <column name="ADDRESS_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="addressline1" type="string">
+            <column name="ADDRESSLINE1" length="30" />
+        </property>
+        <property name="addressline2" type="string">
+            <column name="ADDRESSLINE2" length="30" />
+        </property>
+        <property name="addressline3" type="string">
+            <column name="ADDRESSLINE3" length="30" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CREATED_BY" length="30" />
+        </property>
+        <property name="createdDate" type="date">
+            <column name="CREATED_DATE" length="10" />
+        </property>
+        <set name="persons" table="person" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ADDRESS_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.data.domain.Person" />
+        </set>
+        <set name="clients" table="client" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ADDRESS_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.aes.data.domain.Client" />
+        </set>
+    </class>
+</hibernate-mapping>
